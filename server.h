@@ -12,5 +12,5 @@ class TCPServer {
 public:
     TCPServer(char* ip_addr, int port);
     void accept_connections(int connections);
-    void respond(int client_socket);
+    void respond(char* request, int client_socket);
 };

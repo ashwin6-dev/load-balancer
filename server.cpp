@@ -38,11 +38,11 @@ void TCPServer::accept_connections(int connections)
     for (;;) {
         recv(client_socket, buffer, sizeof(buffer), 0);
         std::cout << buffer << std::endl;
-        respond(client_socket);   
+        respond(buffer, client_socket);   
     }
 }
 
-void TCPServer::respond(int client_socket)
+void TCPServer::respond(char* request, int client_socket)
 {
     char* msg = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 10\n\nhello boss";
     send(client_socket, msg, strlen(msg), 0);
