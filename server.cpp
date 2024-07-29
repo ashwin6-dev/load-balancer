@@ -44,7 +44,7 @@ void TCPServer::accept_connections(int connections)
 
 void TCPServer::respond(char* request, int client_socket)
 {
-    char* msg = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 10\n\nhello boss";
+    char* msg = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 24\n\nno servers are available";
     send(client_socket, msg, strlen(msg), 0);
     close(client_socket);
 }

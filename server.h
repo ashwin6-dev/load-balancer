@@ -6,6 +6,7 @@
 #include <unistd.h>
 
 class TCPServer {
+protected:
     int server_socket;
     sockaddr_in server_addr;
 
